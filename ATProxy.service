@@ -1,0 +1,13 @@
+[Unit]
+Description=ATProxy Service
+Documentation=https://github.com/XiaoXianHW/ATProxy
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ATProxy
+KillSignal=SIGTERM
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
