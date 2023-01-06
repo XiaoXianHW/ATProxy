@@ -116,14 +116,14 @@ jobs:
       run: mv ATProxy-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }} ATProxy-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}.exe
 
     - name: Upload a Non-Windows Build Artifact
-      uses: actions/upload-artifact@v3.1.0
+      uses: actions/upload-artifact@v3.1.2
       if: ${{ env.GOOS != 'windows' }}
       with:
         name: ATProxy-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}
         path: ATProxy-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}
 
     - name: Upload a Windows Build Artifact
-      uses: actions/upload-artifact@v3.1.0
+      uses: actions/upload-artifact@v3.1.2
       if: ${{ env.GOOS == 'windows' }}
       with:
         name: ATProxy-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}.exe
